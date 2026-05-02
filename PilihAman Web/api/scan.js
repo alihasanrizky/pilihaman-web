@@ -6,8 +6,7 @@ module.exports = async function handler(req, res) {
 
     const { teks } = req.body;
     
-    // Vercel akan membaca kunci rahasia ini dari dashboard mereka
-    // Kunci ini TIDAK AKAN PERNAH sampai ke browser pengguna
+    // Kunci rahasia dari Vercel Environment Variables
     const GROQ_KEY = process.env.GROQ_API_KEY;
     const GOOGLE_KEY = process.env.GOOGLE_SAFE_BROWSING_KEY;
 
@@ -70,4 +69,4 @@ module.exports = async function handler(req, res) {
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }
-}
+};
